@@ -23,6 +23,7 @@ import com.ekyrizky.contacts.contacts.domain.Contact
 import com.ekyrizky.contacts.contacts.presentation.components.AddContactSheet
 import com.ekyrizky.contacts.contacts.presentation.components.ContactDetailSheet
 import com.ekyrizky.contacts.contacts.presentation.components.ContactListItem
+import com.ekyrizky.contacts.contacts.presentation.components.RecentlyAddedContacts
 import com.ekyrizky.contacts.core.presentation.ImagePicker
 
 @Composable
@@ -55,6 +56,15 @@ fun ContactListScreen(
             contentPadding = PaddingValues(vertical = 16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            item {
+                RecentlyAddedContacts(
+                    contacts = state.recentlyAddedContacts,
+                    onClick = {
+                        onEvent(ContactListEvent.SelectContact(it))
+                    }
+                )
+            }
+
             item {
                 Text(
                     text = "My contacts (${state.contacts.size})",
