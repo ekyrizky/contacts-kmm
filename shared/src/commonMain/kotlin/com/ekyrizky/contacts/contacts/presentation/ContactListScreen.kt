@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.ekyrizky.contacts.contacts.domain.Contact
+import com.ekyrizky.contacts.contacts.presentation.components.AddContactSheet
 import com.ekyrizky.contacts.contacts.presentation.components.ContactListItem
 
 @Composable
@@ -72,4 +73,10 @@ fun ContactListScreen(
             }
         }
     }
+    AddContactSheet(
+        state = state,
+        newContact = newContact,
+        isOpen = state.isAddContactSheetOpen,
+        onEvent = onEvent
+    )
 }
