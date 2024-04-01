@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.ekyrizky.contacts.contacts.domain.Contact
 import com.ekyrizky.contacts.contacts.presentation.components.AddContactSheet
+import com.ekyrizky.contacts.contacts.presentation.components.ContactDetailSheet
 import com.ekyrizky.contacts.contacts.presentation.components.ContactListItem
 import com.ekyrizky.contacts.core.presentation.ImagePicker
 
@@ -77,6 +78,11 @@ fun ContactListScreen(
             }
         }
     }
+    ContactDetailSheet(
+        isOpen = state.isSelectedContactSheetOpen,
+        selectedContact = state.selectedContact,
+        onEvent = onEvent,
+    )
     AddContactSheet(
         state = state,
         newContact = newContact,
