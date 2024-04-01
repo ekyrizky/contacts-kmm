@@ -1,6 +1,7 @@
 package com.ekyrizky.contacts
 
 import androidx.compose.ui.window.ComposeUIViewController
+import com.ekyrizky.contacts.di.AppModule
 import platform.UIKit.UIScreen
 import platform.UIKit.UIUserInterfaceStyle
 
@@ -10,6 +11,7 @@ fun MainViewController() = ComposeUIViewController {
                 UIUserInterfaceStyle.UIUserInterfaceStyleDark
     App(
         darkTheme = isDarkTheme,
-        dynamicColor = false
+        dynamicColor = false,
+        appModule = AppModule()
     )
 }
